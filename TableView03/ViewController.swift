@@ -36,7 +36,20 @@ class ViewController: UIViewController,UITableViewDataSource {
         
         return myCell
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+        if segue.identifier == "goAdd"{
+            let addVC = segue.destination as! AddViewController
+            addVC.testData = animals[2]
+            addVC.imgData = "Cat"
+            addVC.nameData = detallAnimals[0]
+        }else if segue.identifier == "goDetail"{
+            if let detailVC = segue.destination as? DetailViewController{
+            }
+           
+        }else{
+            print("segue error")
+        }
+    }
 
 }
 
